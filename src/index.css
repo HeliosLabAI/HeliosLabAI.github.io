@@ -18,7 +18,7 @@
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
+    --secondary: 0 0% 97%;
     --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 96%;
@@ -34,7 +34,7 @@
     --input: 0 0% 90%;
     --ring: 0 0% 0%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -48,8 +48,9 @@
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --cta-bg: 0 0% 0%;
-    --cta-foreground: 0 0% 100%;
+    --pillar-number: 0 0% 94%;
+    --section-divider: 0 0% 92%;
+    --subtle-bg: 0 0% 98.5%;
   }
 }
 
@@ -61,9 +62,17 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
