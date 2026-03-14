@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 const goals = [
   "Reason across extremely large knowledge spaces",
   "Operate autonomously over long periods",
-  "Learn from experience and improve over time",
+  "Learn continuously from new data",
+  "Interact reliably with complex environments",
   "Assist humans in solving complex scientific, engineering, and societal challenges",
 ];
 
@@ -17,13 +18,13 @@ const MissionSection = () => (
         transition={{ duration: 0.5 }}
       >
         <p className="font-display text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-          Overarching Mission
+          Overall Mission
         </p>
         <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-8 max-w-2xl text-balance">
           Developing advanced AI systems capable of large-scale reasoning, persistent operation, and reliable interaction with the world.
         </h2>
         <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mb-10">
-          By advancing research in long-context intelligence, autonomous agents, and scalable AI infrastructure, Helios Lab aims to help move the field toward more capable and reliable artificial intelligence systems.
+          Through research in long-context intelligence, autonomous AI systems, evaluation science, scalable data systems, interpretability, and training infrastructure, Helios Lab seeks to contribute to the development of more capable, reliable, and scientifically grounded artificial intelligence systems.
         </p>
         <div className="space-y-3">
           {goals.map((goal, i) => (
