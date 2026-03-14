@@ -10,9 +10,35 @@ import MissionSection from "@/components/MissionSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import Divider from "@/components/Divider";
+import { Link } from "react-router-dom";
 
 const Index = () => (
   <main className="bg-background">
+    {/* Navigation */}
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex gap-4">
+      <Link
+        to="/"
+        className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        Home
+      </Link>
+      <Link
+        to="/feedback"
+        className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        Feedback
+      </Link>
+      <Link
+        to="/team"
+        className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        Team
+      </Link>
+      <button className="text-xs text-foreground font-semibold">
+        Research
+      </button>
+    </div>
+    
     <HeroSection />
     <PillarNav />
     <div id="pillar-1"><PillarOne /></div>

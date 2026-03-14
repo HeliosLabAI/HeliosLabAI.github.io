@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AnimatedLogo from "./AnimatedLogo";
 
 const HeroSection = () => {
   return (
@@ -20,11 +21,17 @@ const HeroSection = () => {
         <p className="font-body text-xs tracking-[0.4em] uppercase text-muted-foreground mb-10">
           Independent AI Research
         </p>
-        <h1 className="font-display font-bold text-7xl sm:text-[8rem] md:text-[10rem] leading-[0.85] tracking-tighter text-foreground">
-          HELIOS
-          <br />
-          <span className="font-light">LAB</span>
-        </h1>
+        <div className="flex items-center justify-center gap-8 mb-10">
+          <AnimatedLogo />
+          <div className="text-center">
+            <h1 className="font-display font-bold text-7xl sm:text-[8rem] md:text-[10rem] leading-[0.85] tracking-tighter text-foreground">
+              HELIOS
+            </h1>
+            <h2 className="font-display font-light text-4xl sm:text-[4rem] md:text-[5rem] leading-[1] tracking-tighter text-foreground">
+              LAB
+            </h2>
+          </div>
+        </div>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

@@ -1,9 +1,14 @@
+import FooterLogo from "./FooterLogo";
+
 const Footer = () => (
   <footer className="py-10 px-6 border-t border-border">
     <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <span className="font-display text-xs font-semibold tracking-[0.2em] text-foreground">
-        HELIOSLAB
-      </span>
+      <div className="flex items-center gap-3">
+        <FooterLogo />
+        <span className="font-display text-xs font-semibold tracking-[0.2em] text-foreground">
+          HELIOSLAB
+        </span>
+      </div>
       <span className="font-body text-[11px] text-muted-foreground">
         © {new Date().getFullYear()} Helios Lab. All rights reserved.
       </span>
