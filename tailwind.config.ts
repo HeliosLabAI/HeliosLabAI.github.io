@@ -100,5 +100,6 @@ export default {
         "line-grow": "line-grow 1.5s ease-out forwards",
       },
     },
+  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
