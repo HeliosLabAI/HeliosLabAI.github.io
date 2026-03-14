@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/helios-radiance-lab/" : "/",
+  base: mode === "production" ? "/" : "/",
   build: {
     assetsDir: "assets",
     rollupOptions: {
