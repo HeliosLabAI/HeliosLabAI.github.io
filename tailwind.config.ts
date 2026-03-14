@@ -51,10 +51,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cta: {
-          DEFAULT: "hsl(var(--cta-bg))",
-          foreground: "hsl(var(--cta-foreground))",
-        },
+        "pillar-number": "hsl(var(--pillar-number))",
+        "subtle-bg": "hsl(var(--subtle-bg))",
+        "section-divider": "hsl(var(--section-divider))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -81,16 +80,25 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "line-grow": {
+          "0%": { height: "0" },
+          "100%": { height: "100%" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.8s ease-out forwards",
+        "line-grow": "line-grow 1.5s ease-out forwards",
       },
     },
-  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
