@@ -8,7 +8,13 @@ const Navbar = () => {
         </a>
         <div className="hidden sm:flex gap-8">
           <a href="#work" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
-            Work
+            About
+          </a>
+          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
+            Projects
+          </a>
+          <a href="#experiments" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
+            Experiments
           </a>
           <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium">
             Contact
