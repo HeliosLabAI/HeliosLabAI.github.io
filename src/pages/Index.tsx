@@ -1,9 +1,9 @@
 import AppShell from "@/components/AppShell";
-import ResearchPage from "./ResearchPage";
+import HomePage from "./HomePage";
 
 const Index = () => (
   <AppShell>
-    <ResearchPage />
+    <HomePage />
   </AppShell>
 );
 

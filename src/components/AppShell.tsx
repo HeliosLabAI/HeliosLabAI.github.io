@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { Beaker, FolderOpen, Sun } from "lucide-react";
+import { FolderOpen, Home, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { to: "/", label: "Research", icon: Beaker },
+  { to: "/", label: "Home", icon: Home },
   { to: "/projects", label: "Projects", icon: FolderOpen },
 ];
 

@@ -1,61 +1,21 @@
 import { motion } from "framer-motion";
-import { FolderOpen, ArrowRight, Clock, CheckCircle2, Rocket } from "lucide-react";
-import projectSolar from "@/assets/project-solar.jpg";
-import projectPlasma from "@/assets/project-plasma.jpg";
-import projectNano from "@/assets/project-nano.jpg";
-import projectThermal from "@/assets/project-thermal.jpg";
-import projectHydrogen from "@/assets/project-hydrogen.jpg";
-import projectAi from "@/assets/project-ai.jpg";
+import { FolderOpen, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import adaptiveArithmetic from "@/assets/adaptive-arithmetic.jpg";
 
 const projects = [
   {
-    image: projectSolar,
-    title: "Perovskite Solar Arrays",
-    category: "Energy Systems",
-    description: "Achieving 34.2% efficiency with next-gen perovskite-silicon tandem cells.",
-    status: "active" as const,
-  },
-  {
-    image: projectPlasma,
-    title: "Plasma Confinement Reactor",
-    category: "Fusion Research",
-    description: "Compact magnetic confinement sustaining plasma at 150 million °C.",
-    status: "active" as const,
-  },
-  {
-    image: projectNano,
-    title: "Nanostructured Catalysts",
-    category: "Advanced Materials",
-    description: "Self-assembling nanomaterial lattices accelerating reactions by 400%.",
+    image: adaptiveArithmetic,
+    title: "Adaptive Arithmetic Agent",
+    category: "AI & Reinforcement Learning",
+    description: "An RL agent that learns addition through Q-Learning and state representation breakthrough.",
     status: "published" as const,
-  },
-  {
-    image: projectThermal,
-    title: "Molten Salt Storage",
-    category: "Energy Storage",
-    description: "Grid-scale thermal storage delivering 500 MWh at 98% efficiency.",
-    status: "active" as const,
-  },
-  {
-    image: projectHydrogen,
-    title: "Green Hydrogen Electrolysis",
-    category: "Clean Fuels",
-    description: "Producing hydrogen at $1.50/kg — the lowest cost ever at scale.",
-    status: "pilot" as const,
-  },
-  {
-    image: projectAi,
-    title: "Neural Material Discovery",
-    category: "AI & Simulation",
-    description: "Deep learning screening 10M+ candidate compounds per day.",
-    status: "active" as const,
+    link: "/projects/adaptive-arithmetic",
   },
 ];
 
 const statusConfig = {
-  active: { label: "Active", icon: Clock, style: "bg-blue-50 text-blue-700" },
   published: { label: "Published", icon: CheckCircle2, style: "bg-emerald-50 text-emerald-700" },
-  pilot: { label: "Pilot", icon: Rocket, style: "bg-amber-50 text-amber-700" },
 };
 
 const ProjectsPage = () => {
@@ -95,35 +55,71 @@ const ProjectsPage = () => {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="card-elevated overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="relative aspect-[3/2] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm ${style}`}>
-                      <StatusIcon className="w-3 h-3" />
-                      {label}
-                    </span>
-                  </div>
-                </div>
+                {project.link ? (
+                  <Link to={project.link} className="block">
+                    <div className="relative aspect-[3/2] overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm ${style}`}>
+                          <StatusIcon className="w-3 h-3" />
+                          {label}
+                        </span>
+                      </div>
+                    </div>
 
-                <div className="p-5">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
-                    {project.category}
-                  </p>
-                  <h3 className="font-semibold text-foreground tracking-tight mb-1.5 group-hover:text-primary transition-colors flex items-center gap-1.5">
-                    {project.title}
-                    <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+                    <div className="p-5">
+                      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
+                        {project.category}
+                      </p>
+                      <h3 className="font-semibold text-foreground tracking-tight mb-1.5 group-hover:text-primary transition-colors flex items-center gap-1.5">
+                        {project.title}
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+                  </Link>
+                ) : (
+                  <>
+                    <div className="relative aspect-[3/2] overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className={`inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full backdrop-blur-sm ${style}`}>
+                          <StatusIcon className="w-3 h-3" />
+                          {label}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-5">
+                      <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1.5">
+                        {project.category}
+                      </p>
+                      <h3 className="font-semibold text-foreground tracking-tight mb-1.5 group-hover:text-primary transition-colors flex items-center gap-1.5">
+                        {project.title}
+                        <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                    </div>
+                  </>
+                )}
               </motion.div>
             );
           })}
